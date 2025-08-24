@@ -1,0 +1,26 @@
+# Parent class
+class Device:
+    def __init__(self, brand):
+        self.brand = brand
+    
+    def power_on(self):
+        print(f"{self.brand} device is now ON!")
+
+# Child class
+class Smartphone(Device):
+    def __init__(self, brand, model, year):
+        super().__init__(brand)
+        self.model = model
+        self.year = year
+
+    def call(self, number):
+        print(f"Calling {number} from {self.model}...")
+
+    def display_info(self):
+        print(f"{self.brand} {self.model} ({self.year})")
+
+# Example usage
+phone1 = Smartphone("Apple", "iPhone 15", 2024)
+phone1.display_info()
+phone1.call("123-456-7890")
+phone1.power_on()
